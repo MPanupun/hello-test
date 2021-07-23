@@ -24,4 +24,37 @@ public class RangeTest {
         int result = myRange.getStart();
         assertEquals(1,result);
     }
+    @Test
+    public void startNumberWithExclude () {
+        MyRange myRange = new MyRange("(1,5]");
+        int result = myRange.getStart();
+        assertEquals(2,result);
+    }
+    @Test
+    public void endNumberWithExclude() {
+        MyRange myRange = new MyRange("[1,5)");
+        int result = myRange.getEnd();
+        assertEquals(4, result);
+    }
+
+    @Test
+    public void endNumberWithInclude() {
+        MyRange myRange = new MyRange("[1,5]");
+        int result = myRange.getEnd();
+        assertEquals(5, result);
+    }
+
+    @Test
+    public void endWithExclude() {
+        MyRange myRange = new MyRange("[1,5)");
+        boolean result = myRange.isEndWithExclude();
+        assertFalse(result);
+    }
+
+    @Test
+    public void endWithInclude() {
+        MyRange myRange = new MyRange("[1,5]");
+        boolean result = myRange.isEndWithExclude();
+        assertTrue(result);
+    }
 }
