@@ -1,7 +1,6 @@
 import java.util.List;
 
 public class MyRange {
-    public static final int ASCII_VALUE_OF_1 = 48;
     public final String input;
 
     public  MyRange(String input) {
@@ -30,5 +29,14 @@ public class MyRange {
     public int totalStartNumber(int StartNumber,int num)
     {
         return  StartNumber + num;
+    }
+    public int[] getResult() {
+        int[] result = new int[getEnd() - getStart() + 1];
+        int number = 0;
+        for(int i = getStart(); i <= getEnd(); i ++) {
+            result[number] = i;
+            number++;
+        }
+        return result;
     }
 }

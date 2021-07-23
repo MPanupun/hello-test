@@ -57,4 +57,11 @@ public class RangeTest {
         boolean result = myRange.isEndWithExclude();
         assertTrue(result);
     }
+    @Test
+    @DisplayName("ผลลัพธืสุดท้าย")
+    public void getResult() {
+        MyRange myRange = new MyRange("[1,5)");
+        int[] result = myRange.getResult();
+        assertArrayEquals(new int[] {1,2,3,4}, result);
+    }
 }
