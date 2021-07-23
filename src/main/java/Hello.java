@@ -1,6 +1,6 @@
 public class Hello {
 
-    public String sawadee(String name){
+    public String sawadee(String name) {
         return "Hello " + name;
     }
 }
