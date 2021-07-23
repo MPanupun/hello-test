@@ -21,13 +21,8 @@ public class TennisGame1 {
     }
 
     public String getScore() {
-        if (m_score1 == m_score2 && m_score1 <= 2) {
-            return scoreResults[m_score1] +"-All";
-        }
-        if (m_score1 == m_score2 && m_score1 > 2) {
-            return "Deuce";
-        }
-
+        if (m_score1 == m_score2)
+           return  getScoreResults(m_score1);
         if (m_score1 >= 4 || m_score2 >= 4) {
             int minusResult = m_score1 - m_score2;
             if(minusResult >= 1)
@@ -44,5 +39,12 @@ public class TennisGame1 {
             return   "Win for " + player;
         else
             return  "Advantage " + player;
+    }
+    public String getScoreResults(int number)
+    {
+        if(number <= 2)
+            return scoreResults[m_score1] +"-All";
+        else
+            return "Deuce";
     }
 }
